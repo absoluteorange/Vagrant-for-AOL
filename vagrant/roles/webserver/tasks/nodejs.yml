@@ -1,15 +1,20 @@
 ---
 
-- name: Add the Nodesource apt key
-  apt_key: url=https://deb.nodesource.com/gpgkey/nodesource.gpg.key state=present
- 
-- name: Add nodesource repository
-  apt_repository: repo='deb https://deb.nodesource.com/node_5.x trusty main' state=present
- 
 - name: Install nodejs and some dependencies
-  apt: name={{ item }} update_cache=yes state=present
+  apt: name={{ item }} update_cache=yes state=latest
   with_items:
       - nodejs
       - build-essential
+      - npm
 
+#Grunt-cli requires a /usr/bin/node directory but the nodejs installation is to /usr/bin/nodejs
+- name: Create a symlink from /usr/bin/nodejs to usr/bin/node
+  file: src=/usr/bin/nodejs dest=/usr/bin/node state=link
 
+- name: Node.js | Install packages
+  npm: global=yes name={{ item }} state=latest
+  with_items:
+      - grunt
+      - grunt-cli
+      - grunt-contrib-compass
+      - grunt-grunticon-sass

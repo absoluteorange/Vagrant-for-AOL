@@ -1,0 +1,19 @@
+---
+
+- name: Install Ruby
+  apt: name={{ item }} update_cache=yes state=latest
+  with_items:
+      - ruby2.0
+      - ruby2.0-dev
+
+- name: Create a symlink from /usr/bin/ruby2.0 to usr/bin/ruby
+  file: src=/usr/bin/ruby2.0 dest=/usr/bin/ruby state=link
+
+- name: Create a symlink from /usr/bin/gem2.0 to usr/bin/gem
+  file: src=/usr/bin/gem2.0 dest=/usr/bin/gem state=link
+
+- name: Install compass
+  gem: name={{ item }} state=latest include_dependencies=yes user_install=no
+  with_items:
+      - compass
+      - sass
