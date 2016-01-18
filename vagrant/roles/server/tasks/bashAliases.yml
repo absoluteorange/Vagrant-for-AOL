@@ -1,0 +1,9 @@
+---
+
+- name: Copy across bash_aliases
+  template:
+    src=.bash_aliases
+    dest=~/
+
+#- name: Executes bash_aliases
+#  command: source ~/.bash_aliases

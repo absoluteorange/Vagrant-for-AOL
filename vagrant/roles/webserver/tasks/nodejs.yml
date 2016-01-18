@@ -14,7 +14,4 @@
 - name: Node.js | Install packages
   npm: global=yes name={{ item }} state=latest
   with_items:
-      - grunt
       - grunt-cli
-      - grunt-contrib-compass
-      - grunt-grunticon-sass

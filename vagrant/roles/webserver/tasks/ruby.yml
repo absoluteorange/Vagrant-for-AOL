@@ -16,4 +16,3 @@
   gem: name={{ item }} state=latest include_dependencies=yes user_install=no
   with_items:
       - compass
-      - sass
