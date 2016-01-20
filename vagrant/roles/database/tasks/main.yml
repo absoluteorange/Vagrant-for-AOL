@@ -1,4 +1,5 @@
 ---
+
 - name: install mysql
   apt: name={{ item }} state=latest
   with_items:
@@ -27,12 +28,8 @@
     state=present
   when: dbstatus.rc != 0
 
-- name: copy database dump file to remote host
-  copy: src=amyvarga.sql dest=/tmp
-  when: dbstatus.rc != 0
-  
-- name: restore dump file to database 'amyvarga'
-  mysql_db: name=amyvarga state=import login_user=amyvarga login_password=0range target=/tmp/amyvarga.sql
+- name: restore SQL file to database 'amyvarga'
+  mysql_db: name=amyvarga state=import login_user=amyvarga login_password=0range target=/vagrant/www/database/dev/aol-dev.sql
   when: dbstatus.rc != 0
 
 - name: copy .my.cnf file with root password credentials

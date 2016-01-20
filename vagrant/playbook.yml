@@ -8,6 +8,7 @@
       apt: update_cache=yes
   roles:
     - server
+    - git
     - webserver
     - database
    

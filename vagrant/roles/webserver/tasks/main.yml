@@ -2,6 +2,5 @@
 - include: apache.yml
 - include: php.yml
 - include: nodejs.yml
-- include: git.yml
 - include: ruby.yml
 - include: libfontconfig.yml
