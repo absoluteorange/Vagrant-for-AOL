@@ -11,7 +11,7 @@
 - name: Create a symlink from /usr/bin/nodejs to usr/bin/node
   file: src=/usr/bin/nodejs dest=/usr/bin/node state=link
 
-- name: Node.js | Install packages
-  npm: global=yes name={{ item }} state=latest
-  with_items:
-      - grunt-cli
+
+- name: Install Grunt CLI
+  npm: name=grunt-cli global=yes state=present
+  sudo: yes
