@@ -1,3 +1,13 @@
 ---
 - name: install php
   apt: name=php5 state=present
+
+- name: Install PHP GD library
+  apt: name=php5-gd state=latest
+  notify:
+    - reload apache
+
+- name: Copy across new php.ini
+  template:
+    src=php.ini
+    dest=/etc/apache2/
