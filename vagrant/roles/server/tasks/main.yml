@@ -1,2 +1,5 @@
 ---
 - include: bashAliases.yml
+
+- name: Add vagrant user
+  user: name=vagrant
