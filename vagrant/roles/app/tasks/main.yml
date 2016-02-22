@@ -1,0 +1,4 @@
+---
+
+- name: install application
+  shell: /vagrant/www/make install
