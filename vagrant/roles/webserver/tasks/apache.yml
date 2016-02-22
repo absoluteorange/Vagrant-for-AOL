@@ -24,3 +24,12 @@
   apache2_module: name=rewrite state=present
   notify:
     - reload apache
+
+- name: Copy across edited envvars
+  template:
+    src=envvars
+    dest=/etc/apache2/envvars
+  notify:
+    - reload apache
+
+
