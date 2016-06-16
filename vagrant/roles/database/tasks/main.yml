@@ -29,7 +29,7 @@
   when: dbstatus.rc != 0
 
 - name: restore SQL file to database 'amyvarga'
-  mysql_db: name=amyvarga state=import login_user=amyvarga login_password=0range target=/vagrant/www/database/prod/aol-dev.sql
+  mysql_db: name=amyvarga state=import login_user=amyvarga login_password=0range target=/vagrant/www/database/prod/aol-prod.sql
   when: dbstatus.rc != 0
 
 - name: copy .my.cnf file with root password credentials
