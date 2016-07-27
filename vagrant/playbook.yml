@@ -9,8 +9,9 @@
   roles:
     - ansible-nodejs-role-master
     - server
-    - git
     - webserver
     - database
+    - git
+    - mongodb
     - app
    

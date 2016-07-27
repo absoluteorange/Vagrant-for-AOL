@@ -20,8 +20,10 @@
   notify:
     - reload apache
 
-- name: enabled mod_rewrite
+- name: enabled modules
   apache2_module: name=rewrite state=present
+  apache2_module: name=proxy state=present
+  apache2_module: name=proxy-html state=present
   notify:
     - reload apache
 
