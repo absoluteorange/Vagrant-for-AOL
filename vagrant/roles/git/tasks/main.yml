@@ -2,11 +2,3 @@
 
 - name: install git
   apt: name=git update_cache=yes state=latest
-
-- name: clone absolute orange repo
-  git: repo=https://github.com/absoluteorange/Absolute-Orange-website-code.git dest=/vagrant/www clone=yes update=no
-
-- name: clone vegan recipes repo
-  git: repo=https://github.com/jonreading81/vegan-recipes.git dest=/vagrant/vegan-recipes clone=yes update=no
-
-
