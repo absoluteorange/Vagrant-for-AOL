@@ -3,3 +3,6 @@
 
 - name: Add vagrant user
   user: name=vagrant
+
+- name: Install zip
+  apt: name=zip update_cache=yes state=latest
