@@ -1,4 +1,7 @@
 ---
 
+- name: clone repo 
+  git: repo=https://github.com/absoluteorange/Absolute-Orange-website-code.git dest=/vagrant/www update=no
+
 - name: install application
-  shell: /vagrant/www/make install
+  make: chdir=/vagrant/www target=install

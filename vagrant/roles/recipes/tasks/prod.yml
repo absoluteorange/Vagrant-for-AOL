@@ -1,0 +1,12 @@
+---
+- name: retrieve deployment and unarchive
+  get_url: url=https://s3-eu-west-1.amazonaws.com/vegan-recipe-deployments/recipes.zip  dest=/vagrant/recipes.zip
+
+
+- name: restore data application
+  shell: unzip recipes.zip -d /vagrant
+    args:
+      chdir: /vagrant
+
+- name: restore data application
+  make: chdir=/vagrant/vegan-recipes target=restore-data

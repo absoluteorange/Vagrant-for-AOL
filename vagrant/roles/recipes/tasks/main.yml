@@ -1,8 +1,2 @@
 ---
-
-- name: retrieve deployment and unarchive
-  unarchive: src=https://s3-eu-west-1.amazonaws.com/vegan-recipe-deployments/recipes.zip  dest=/vagrant/vegan-recipes copy=no
-  
-
-- name: restore data application
-  make: chdir=/vagrant/vegan-recipes target=restore-data
+- include: dev.yml
