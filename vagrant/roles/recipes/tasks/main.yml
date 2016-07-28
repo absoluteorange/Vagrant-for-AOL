@@ -1,8 +1,8 @@
 ---
 
-- name: clone vegan recipes repo
-  git: repo=https://github.com/jonreading81/vegan-recipes.git dest=/vagrant/vegan-recipes clone=yes update=no
+- name: retrieve deployment and unarchive
+  unarchive: src=https://s3-eu-west-1.amazonaws.com/vegan-recipe-deployments/recipes.zip  dest=/vagrant/vegan-recipes copy=no
   
 
-- name: install application
-  make: chdir=/vagrant/vegan-recipes target=install
+- name: restore data application
+  make: chdir=/vagrant/vegan-recipes target=restore-data
