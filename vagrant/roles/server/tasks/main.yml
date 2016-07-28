@@ -8,4 +8,4 @@
   apt: name=zip update_cache=yes state=latest
 
 - name: Install unzip
-apt: name=unzip update_cache=yes state=latest
+  apt: name=unzip update_cache=yes state=latest

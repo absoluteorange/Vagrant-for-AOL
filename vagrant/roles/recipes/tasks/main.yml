@@ -1,2 +1,2 @@
 ---
-- include: dev.yml
+- include: prod.yml

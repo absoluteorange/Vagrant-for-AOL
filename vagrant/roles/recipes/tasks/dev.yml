@@ -1,7 +1,7 @@
 ---
 
 - name: clone repo 
-  git: repo=https://github.com/jonreading81/vegan-recipes.git dest=/vagrant/vegan-recipes update=no
+  git: repo=git://github.com/jonreading81/vegan-recipes.git dest=/vagrant/vegan-recipes update=no
 
 - name: install application
-  make: chdir=/vagrant/www target=install
+  make: chdir=/vagrant/vegan-recipes target=install

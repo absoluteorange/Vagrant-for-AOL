@@ -7,12 +7,12 @@
     - name: update apt cache
       apt: update_cache=yes
   roles:
-    - ansible-nodejs-role-master
-    - server
-    - webserver
-    - database
-    - git
-    - mongodb
-    - ao
+   # - ansible-nodejs-role-master
+    #- server
+    #- webserver
+    #- database
+    #- git
+    #- mongodb
+    #- ao
     - recipes
    
