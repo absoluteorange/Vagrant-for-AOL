@@ -8,3 +8,7 @@
 - name: Install Grunt CLI
   npm: name=grunt-cli global=yes state=present
   sudo: yes
+
+- name: Install Forever
+  npm: name=forever global=yes state=present
+  sudo: yes
