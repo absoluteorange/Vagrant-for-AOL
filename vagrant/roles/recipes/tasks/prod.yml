@@ -15,9 +15,14 @@
 - name: retrieve deployment 
   get_url: url=https://s3-eu-west-1.amazonaws.com/vegan-recipe-deployments/recipes.tar  dest=/vagrant/recipes.tar
 
+
+- name: Source .bashrc
+  shell: . ~/.bashrc
+  become: true
+
 - name: unarchive
-  shell: tar -xf /vagrant/recipes.tar -C /vagrant
+ # shell: tar -xf /vagrant/recipes.tar -C /vagrant
 
 - name: restore data
-  make: chdir=/vagrant/vegan-recipes target=restore-data
+ # make: chdir=/vagrant/vegan-recipes target=restore-data
 
