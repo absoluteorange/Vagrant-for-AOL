@@ -19,6 +19,8 @@ port = {{ mongodb_port }}
 # Listen to local interface only. Comment out to listen on all interfaces.
 bind_ip = 127.0.0.1
 
+smallfiles = true
+
 # Disables write-ahead journaling
 {% if docker or ansible_architecture == 'armv6l' or ansible_architecture == 'armv7l' %}
 journal = true

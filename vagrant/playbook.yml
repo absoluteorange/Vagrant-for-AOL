@@ -12,7 +12,7 @@
     #- webserver
     #- database
     #- git
-    #- mongodb
+    - mongodb
     #- ao
     - recipes
    

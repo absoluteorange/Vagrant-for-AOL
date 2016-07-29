@@ -1,7 +1,19 @@
 ---
+
+- name: include default stormpathep variables
+  include_vars: stormpath.yml
+
+- name: Adding STORMPATH_CLIENT_APIKEY_ID ENV VAR
+  lineinfile: dest=~/.bashrc line='export STORMPATH_CLIENT_APIKEY_ID={{ APIKEY }}' insertafter='EOF' regexp='export STORMPATH_CLIENT_APIKEY_ID={{ APIKEY }}' state=present
+
+- name: Adding export STORMPATH_SECRet VAR
+  lineinfile: dest=~/.bashrc line='export STORMPATH_CLIENT_APIKEY_SECRET={{ SECRET }}' insertafter='EOF' regexp='export STORMPATH_CLIENT_APIKEY_SECRET={{ SECRET }}' state=present
+
+- name: Adding export STORMPATH_APPLICATION_HREF VAR
+  lineinfile: dest=~/.bashrc line='export STORMPATH_APPLICATION_HREF={{ APPLICATION }}' insertafter='EOF' regexp='export STORMPATH_APPLICATION_HREF={{ APPLICATION }}' state=present
+
 - name: retrieve deployment 
   get_url: url=https://s3-eu-west-1.amazonaws.com/vegan-recipe-deployments/recipes.tar  dest=/vagrant/recipes.tar
-
 
 - name: unarchive
   shell: tar -xf /vagrant/recipes.tar -C /vagrant
@@ -9,5 +21,3 @@
 - name: restore data
   make: chdir=/vagrant/vegan-recipes target=restore-data
 
-- name: build static assets 
-  make: chdir=/vagrant/vegan-recipes target=build
