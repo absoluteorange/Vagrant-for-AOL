@@ -1,12 +1,13 @@
 ---
-- name: retrieve deployment and unarchive
+- name: retrieve deployment 
   get_url: url=https://s3-eu-west-1.amazonaws.com/vegan-recipe-deployments/recipes.tar  dest=/vagrant/recipes.tar
 
 
-- name: restore data application
-  shell: tar -xf recipes.tar -C /vagrant/vegan-recipes
-    args:
-      chdir: /vagrant
+- name: unarchive
+  shell: tar -xf /vagrant/recipes.tar -C /vagrant
 
-- name: restore data application
+- name: restore data
   make: chdir=/vagrant/vegan-recipes target=restore-data
+
+- name: build static assets 
+  make: chdir=/vagrant/vegan-recipes target=build
