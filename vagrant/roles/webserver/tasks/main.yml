@@ -1,6 +1,7 @@
 ---
 - include: apache.yml
 - include: php.yml
+- include: imagemagick.yml
 - include: nodejs.yml
 - include: ruby.yml
 - include: libfontconfig.yml

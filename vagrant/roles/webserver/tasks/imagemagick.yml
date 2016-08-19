@@ -1,0 +1,3 @@
+---
+- name: install imageMagick
+  apt: name=imagemagick state=present
