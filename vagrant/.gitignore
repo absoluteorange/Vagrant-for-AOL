@@ -1,2 +1,2 @@
-vagrant/roles/recipes/tasks/stormpath.yml
-vagrant/roles/aws-cli/defaults/main.yml
+/vagrant/roles/recipes/tasks/stormpath.yml
+/vagrant/roles/aws-cli/defaults/main.yml
