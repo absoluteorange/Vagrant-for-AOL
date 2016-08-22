@@ -11,9 +11,9 @@
     - ansible-nodejs-role-master
     - aws-cli
     - webserver
-    - database
     - git
     - mongodb
     - ao
+    - database
     - recipes
    
