@@ -22,17 +22,9 @@
 - name: Adding export STORMPATH_APPLICATION_HREF VAR
   lineinfile: dest=~/.bashrc line='export STORMPATH_APPLICATION_HREF={{ APPLICATION }}' insertafter='EOF' regexp='export STORMPATH_APPLICATION_HREF={{ APPLICATION }}' state=present
 
-- name: retrieve deployment 
-  get_url: url=https://s3-eu-west-1.amazonaws.com/vegan-recipe-deployments/recipes.tar  dest=/vagrant/recipes.tar
-
-
 - name: Source .bashrc
   shell: . ~/.bashrc
   become: true
 
-- name: unarchive
- # shell: tar -xf /vagrant/recipes.tar -C /vagrant
-
-- name: restore data
- # make: chdir=/vagrant/vegan-recipes target=restore-data
-
+- name: deploy application
+  make: chdir=/vagrant/deploy target=deploy-recipes

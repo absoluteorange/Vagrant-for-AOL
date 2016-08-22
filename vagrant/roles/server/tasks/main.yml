@@ -3,3 +3,9 @@
 
 - name: Add vagrant user
   user: name=vagrant
+
+- name: Creates deploments directory
+  file: path=/vagrant/deploy state=directory mode=0775
+
+- name: Add Makefile for retriving deployments
+  template: src=deployment.makefile.j2 dest=/vagrant/deploy/makefile owner=root group=root mode=0755 backup=no

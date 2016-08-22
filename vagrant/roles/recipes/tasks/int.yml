@@ -1,0 +1,5 @@
+---
+- include: prod.yml
+
+- name: deploy application
+  make: chdir=/vagrant/vegan-recipes target=deploy

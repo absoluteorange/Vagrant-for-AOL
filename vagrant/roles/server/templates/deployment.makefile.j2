@@ -1,0 +1,6 @@
+deploy-recipes:
+        aws s3 cp s3://vegan-recipe-deployments/recipes.tar ./recipes.tar
+        rm -rf /vagrant/vegan-recipes
+        mkdir /vagrant/vegan-recipes
+        tar -xf ./recipes.tar -C /vagrant/vegan-recipes
+        cd  /vagrant/vegan-recipes  && $(MAKE) restore-data
