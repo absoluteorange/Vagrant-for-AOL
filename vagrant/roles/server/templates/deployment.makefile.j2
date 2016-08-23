@@ -4,3 +4,5 @@ deploy-recipes:
         mkdir /vagrant/vegan-recipes
         tar -xf ./recipes.tar -C /vagrant/vegan-recipes
         cd  /vagrant/vegan-recipes  && $(MAKE) restore-data
+        restart vegan-recipes-api
+        restart vegan-recipes
