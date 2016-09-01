@@ -15,7 +15,7 @@ script
     export STORMPATH_CLIENT_APIKEY_SECRET={{ SECRET }}
     export STORMPATH_APPLICATION_HREF={{ APPLICATION }}
     chdir /vagrant/vegan-recipes
-    exec npm run {{ script }} >> /var/log/node.log 2>&1
+    exec npm run start-prod >> /var/log/node.log 2>&1
 end script
 
 post-start script
