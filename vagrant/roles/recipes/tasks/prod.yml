@@ -1,8 +1,5 @@
 ---
 
-- name: include default stormpathep variables
-  include_vars: stormpath.yml
-
 - name: Vegan Recipes Service 
   template: src=vegan-recipes.conf.j2 dest=/etc/init/vegan-recipes.conf owner=root group=root mode=0755 backup=no
   notify: restart vegan-recipes
