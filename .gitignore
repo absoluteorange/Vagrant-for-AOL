@@ -2,7 +2,5 @@ vagrant/www
 AOL
 AOL-AWS
 vagrant/.vagrant/
-vagrant/roles/recipes/tasks/settings.yml
-vagrant/roles/aws-cli/defaults/main.yml
-vagrant/roles/aws-cli/defaults/main.yml
+vagrant/group_vars/all.yml
 

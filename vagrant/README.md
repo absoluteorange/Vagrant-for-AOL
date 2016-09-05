@@ -3,6 +3,11 @@ Install Vagrant
 Install Virtual Machine  
 Install Ansible  
 
+Add Group Vars for ansible
+
+In terminal:  
+$ cp [your path to vagrant]/group_vars/_all.yml  [your path to vagrant]/group_vars/all.yml
+
 In terminal:  
 $ cd [your path to vagrant]/vagrant/  
 $ vagrant up  
@@ -19,6 +24,8 @@ $ grunt build
 On host machine browser http://localhost:8888/ to view site
 
 CREATE AN ABSOUTE ORANGE WEBSITE INSTANCE  
+
+
 Add keys to ~/.bash_profile:  
 export AWS_KEY=[key]  
 export AWS_SECRET=[key]  
