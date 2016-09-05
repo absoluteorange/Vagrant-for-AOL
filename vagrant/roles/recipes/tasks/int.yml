@@ -5,10 +5,8 @@
   git: repo=git://github.com/jonreading81/vegan-recipes.git dest=/vagrant/vegan-recipes update=no
 
 
-- name: Add google credentials
-  template: src=google.json.j2 dest=/vagrant/vegan-recipes/api/data/google.json owner=root group=root mode=0755 backup=no
-  notify: restart vegan-recipes
-  register: result
+- name: Get google credentials
+  make: chdir=/vagrant/vegan-recipes target=get-google-creds
 
 - name: deploy application
   make: chdir=/vagrant/vegan-recipes target=deploy-latest
