@@ -3,6 +3,11 @@ Install Vagrant
 Install Virtual Machine  
 Install Ansible  
 
+Add Group Vars for ansible
+
+In terminal:  
+$ cp [your path to vagrant]/group_vars/_all.yml  [your path to vagrant]/group_vars/all.yml
+
 In terminal:  
 $ cd [your path to vagrant]/vagrant/  
 $ vagrant up  
