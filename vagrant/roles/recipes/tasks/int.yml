@@ -1,5 +1,14 @@
 ---
-- include: prod.yml
+- include: env.yml
+
+- name: clone repo 
+  git: repo=git://github.com/jonreading81/vegan-recipes.git dest=/vagrant/vegan-recipes update=no
+
+
+- name: Add google credentials
+  template: src=google.json.j2 dest=/vagrant/vegan-recipes/api/data owner=root group=root mode=0755 backup=no
+  notify: restart vegan-recipes
+  register: result
 
 - name: deploy application
-  make: chdir=/vagrant/vegan-recipes target=deploy
+  make: chdir=/vagrant/vegan-recipes target=deploy-latest

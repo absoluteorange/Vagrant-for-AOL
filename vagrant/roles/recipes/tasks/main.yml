@@ -1,7 +1,2 @@
 ---
-- include: prod.yml
-
-- name: Add google credentials
-  template: src=google.json.j2 dest=/vagrant/vegan-recipes/api/data owner=root group=root mode=0755 backup=no
-  notify: restart vegan-recipes
-  register: result
+- include: int.yml
