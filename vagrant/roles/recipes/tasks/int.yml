@@ -4,9 +4,5 @@
 - name: clone repo 
   git: repo=git://github.com/jonreading81/vegan-recipes.git dest=/vagrant/vegan-recipes update=no
 
-
-- name: Get google credentials
-  make: chdir=/vagrant/vegan-recipes target=get-google-creds
-
 - name: deploy application
   make: chdir=/vagrant/vegan-recipes target=deploy-latest
