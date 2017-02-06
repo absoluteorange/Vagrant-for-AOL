@@ -2,14 +2,8 @@
 - include: env.yml
 
 - name: deploy application
-  make: chdir=/vagrant/deploy target=deploy-recipes
+make: chdir=/vagrant/deploy target=deploy-recipes
 
-- name: Creates weekly backup cronjob
-  template: src=backup.sh.j2 dest=/usr/local/bin/backup-recipes.sh" owner=root group=root mode=0755 backup=no
-  cron: minute="20" hour="5" weekday="sun"
-        name="Backup data and image to git repo"
-        cron_file="recipes-WeeklyBackups"
-        user="root"
-        job="/usr/local/bin/backup-recipes.sh"
-
+- name: Add backup task
+  template: src=backup.sh.j2 dest=/etc/cron.weekly/backup-recipes owner=root group=root mode=0755 backup=no
 
