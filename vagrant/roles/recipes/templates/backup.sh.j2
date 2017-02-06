@@ -1,1 +1,5 @@
-make -C /vagrant/vegan-recipes backup-all
+cd /vagrant/vegan-recipes
+mongodump --db test -o ./data
+git add .
+git commit -m 'Added data'
+git push https://{{ github_user }}:{{ github_password }}@github.com/jonreading81/vegan-recipes.git
