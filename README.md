@@ -61,6 +61,7 @@ $ sudo make install
 COMMITTING DATA FROM ABSOLUTE ORANGE AWS TO GIT REPO  
 $ ssh -i "aol-aws.pem" ubuntu@[Amazon instance Public DNS]  
 $ sudo su  
+$ cd /vagrant/www/
 $ mysqldump -u amyvarga -p0range amyvarga > database/prod/aol-prod.sql   
 $ sudo git status  
 $ sudo git add -A  
