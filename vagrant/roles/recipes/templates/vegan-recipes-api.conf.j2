@@ -11,6 +11,9 @@ respawn limit 99 5
 script
     # Not sure why $HOME is needed, but we found that it is:
     export HOME="/root"
+    export OKTA_APITOKEN={{ OKTA_APITOKEN }}
+    export OKTA_ORG={{ OKTA_ORG }}
+    export OKTA_APPLICATION_ID={{ OKTA_APPLICATION_ID }}
     export STORMPATH_CLIENT_APIKEY_ID={{ APIKEY }}
     export STORMPATH_CLIENT_APIKEY_SECRET={{ SECRET }}
     export STORMPATH_APPLICATION_HREF={{ APPLICATION }}
@@ -21,3 +24,5 @@ end script
 post-start script
 
 end script
+
+
