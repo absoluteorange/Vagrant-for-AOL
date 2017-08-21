@@ -15,6 +15,22 @@
 </VirtualHost>
 
 <VirtualHost *:80>
+  ServerName blog.calloftheforest.com
+  ServerAlias blog.calloftheforest.com
+  ServerAdmin webmaster@localhost
+  DocumentRoot /vagrant/call-of-the-forest-blog
+
+  <Directory /vagrant/call-of-the-forest-blog>
+    Require all granted
+    Options Indexes FollowSymLinks MultiViews
+    AllowOverride All
+  </Directory>
+
+  ErrorLog ${APACHE_LOG_DIR}/error.log
+  CustomLog ${APACHE_LOG_DIR}/access.log combined
+</VirtualHost>
+
+<VirtualHost *:80>
    ServerAdmin webmaster@localhost
    ServerName calloftheforest.com
    ServerAlias recipes.calloftheforest.com www.calloftheforest.com

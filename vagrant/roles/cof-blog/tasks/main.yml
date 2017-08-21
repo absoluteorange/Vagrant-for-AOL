@@ -1,0 +1,19 @@
+---
+- name: clone Blog repo 
+  git: repo=https://github.com/jonreading81/call-of-the-forest-blog dest=/vagrant/call-of-the-forest-blog update=no
+
+
+- name: Copy sample config file
+  command: cp /vagrant/call-of-the-forest-blog/wp-config-sample.php /vagrant/call-of-the-forest-blog/wp-config.php creates=/var/www/call-of-the-forest-blog/wp-config.php
+  sudo: yes
+
+- name: Update WordPress config file
+  lineinfile:
+    dest=/vagrant/call-of-the-forest-blog/wp-config.php
+    regexp="{{ item.regexp }}"
+    line="{{ item.line }}"
+  with_items:
+    - {'regexp': "define\\('DB_NAME', '(.)+'\\);", 'line': "define('DB_NAME', 'amyvarga');"}        
+    - {'regexp': "define\\('DB_USER', '(.)+'\\);", 'line': "define('DB_USER', 'amyvarga');"}        
+    - {'regexp': "define\\('DB_PASSWORD', '(.)+'\\);", 'line': "define('DB_PASSWORD', '0range');"}
+  sudo: yes

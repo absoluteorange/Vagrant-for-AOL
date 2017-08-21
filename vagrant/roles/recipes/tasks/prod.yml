@@ -2,6 +2,8 @@
 - include: env.yml
 
 - name: deploy application
-  make: chdir=/vagrant/deploy target=deploy-recipes
+make: chdir=/vagrant/deploy target=deploy-recipes
 
+- name: Add backup task
+  template: src=backup.sh.j2 dest=/etc/cron.weekly/backup-recipes owner=root group=root mode=0755 backup=no
 
