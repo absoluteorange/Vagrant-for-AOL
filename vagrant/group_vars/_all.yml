@@ -1,5 +1,5 @@
 APIKEY: ""
-SECRET: "" 
+ORG: "" 
 APPLICATION: ""
 
 aws_region: ''
