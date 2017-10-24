@@ -51,6 +51,25 @@
 
 <VirtualHost *:80>
    ServerAdmin webmaster@localhost
+   ServerName ayaplantbased.com
+   ServerAlias www.ayaplantbased.com
+
+   ProxyRequests Off
+   ProxyPreserveHost On
+   ProxyVia Full
+   <Proxy *>
+      Require all granted
+   </Proxy>
+
+   <Location />
+      ProxyPass  http://127.0.0.1:3000/aya
+      ProxyPassReverse  http://127.0.0.1:3000/aya
+   </Location>
+
+</VirtualHost>
+
+<VirtualHost *:80>
+   ServerAdmin webmaster@localhost
    ServerName api.calloftheforest.com
    ServerAlias api.calloftheforest.com
 
