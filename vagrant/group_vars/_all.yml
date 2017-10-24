@@ -1,16 +1,9 @@
 APIKEY: ""
-SECRET: "" 
+ORG: "" 
 APPLICATION: ""
-
-OKTA_APITOKEN: ""
-OKTA_ORG: "" 
-OKTA_APPLICATION_ID: ""
 
 aws_region: ''
 aws_access_key_id: ''
 aws_secret_access_key: ''
 
 GOOGLEKEY: ""
-
-github_user :''
-github_password :''
