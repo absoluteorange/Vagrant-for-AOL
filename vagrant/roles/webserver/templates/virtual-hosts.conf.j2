@@ -62,15 +62,10 @@
    </Proxy>
 
    <Location />
-      ProxyPass  http://127.0.0.1:3000/aya
-      ProxyPassReverse  http://127.0.0.1:3000/aya
-   </Location>
-   <LocationMatch "^/(images|ws|dist)(/.*/|.*)">
-      ProxyPass  http://127.0.0.1:3000/
-      ProxyPassReverse  http://127.0.0.1:3000/
-   </LocationMatch>
-
-
+        RedirectMatch ^/$ http://www.ayaplantbased.com/aya
+        ProxyPass  http://127.0.0.1:3000/
+        ProxyPassReverse  http://127.0.0.1:3000/
+     </Location>
 </VirtualHost>
 
 <VirtualHost *:80>
