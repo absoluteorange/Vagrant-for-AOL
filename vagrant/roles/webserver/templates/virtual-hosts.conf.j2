@@ -62,9 +62,10 @@
    </Proxy>
 
    <Location />
-      ProxyPass  http://127.0.0.1:3000/aya
-      ProxyPassReverse  http://127.0.0.1:3000/aya
-   </Location>
+       RedirectMatch ^/$ /aya
+      ProxyPass  http://127.0.0.1:3000/
+       ProxyPassReverse  http://127.0.0.1:3000/
+    </Location>
 
 </VirtualHost>
 
