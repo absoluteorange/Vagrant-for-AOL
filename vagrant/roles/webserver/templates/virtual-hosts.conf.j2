@@ -31,6 +31,21 @@
 </VirtualHost>
 
 <VirtualHost *:80>
+  ServerName www.janosvarga.com
+  ServerAdmin webmaster@localhost
+  DocumentRoot /vagrant/janos-varga/public
+
+  <Directory /vagrant/janos-varga/public>
+    Require all granted
+    Options Indexes FollowSymLinks MultiViews
+    AllowOverride All
+  </Directory>
+
+  ErrorLog ${APACHE_LOG_DIR}/error.log
+  CustomLog ${APACHE_LOG_DIR}/access.log combined
+</VirtualHost>
+
+<VirtualHost *:80>
    ServerAdmin webmaster@localhost
    ServerName calloftheforest.com
    ServerAlias recipes.calloftheforest.com www.calloftheforest.com

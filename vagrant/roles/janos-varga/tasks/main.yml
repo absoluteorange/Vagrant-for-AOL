@@ -1,0 +1,4 @@
+---
+
+- name: clone repo
+  git: repo=https://github.com/absoluteorange/janos-varga-the-voice.git dest=/vagrant/janos-varga update=no
