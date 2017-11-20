@@ -11,6 +11,8 @@ respawn limit 99 5
 script
     # Not sure why $HOME is needed, but we found that it is:
     export HOME="/root"
+    export AWS_ACCESS_KEY_ID={{ aws_access_key_id }}
+    export AWS_SECRET_ACCESS_KEY={{ aws_secret_access_key }}
     export OKTA_APITOKEN={{ OKTA_APITOKEN }}
     export OKTA_ORG={{ OKTA_ORG }}
     export OKTA_APPLICATION_ID={{ OKTA_APPLICATION_ID }}
@@ -24,5 +26,3 @@ end script
 post-start script
 
 end script
-
-
