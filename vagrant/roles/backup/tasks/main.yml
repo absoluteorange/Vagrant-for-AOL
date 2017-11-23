@@ -1,7 +1,0 @@
----
-
-- name: Add backup script
-  template: src=backup.sh.j2 dest=/vagrant/backup.sh owner=root group=root mode=0777 backup=no
-
-- name: Add cron script
-  template: src=backup.cron.j2 dest=/etc/cron.d/backup owner=root group=root mode=0777 backup=no

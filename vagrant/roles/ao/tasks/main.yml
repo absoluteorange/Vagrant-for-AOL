@@ -1,7 +1,16 @@
 ---
 
-- name: clone repo 
+- name: clone repo
   git: repo=https://github.com/absoluteorange/Absolute-Orange-website-code.git dest=/vagrant/www update=no
 
 - name: install application
   make: chdir=/vagrant/www target=install
+
+- cron:
+    name: backup
+    weekday: 3
+    minute: 0
+    hour: 0
+    user: ubuntu
+    job: "cd /vagrant/www && sudo make backup"
+    cron_file: ao-backup

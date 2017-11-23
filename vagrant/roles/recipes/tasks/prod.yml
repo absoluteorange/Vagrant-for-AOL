@@ -7,3 +7,11 @@ make: chdir=/vagrant/deploy target=deploy-recipes
 - name: Add backup task
   template: src=backup.sh.j2 dest=/etc/cron.weekly/backup-recipes owner=root group=root mode=0755 backup=no
 
+- cron:
+    name: backup
+    weekday: 3
+    minute: 0
+    hour: 0
+    user: ubuntu
+    job: "cd /vagrant/www && sudo make backup-all"
+    cron_file: recipes-backup
