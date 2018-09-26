@@ -19,6 +19,7 @@ script
     export STORMPATH_CLIENT_APIKEY_ID={{ APIKEY }}
     export STORMPATH_CLIENT_APIKEY_SECRET={{ SECRET }}
     export STORMPATH_APPLICATION_HREF={{ APPLICATION }}
+    export MAILCHIMP_APITOKEN={{ MAILCHIMP_APITOKEN }}
     chdir /vagrant/vegan-recipes
     exec npm run start-prod-api >> /var/log/node.log 2>&1
 end script
