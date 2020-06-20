@@ -1,15 +1,14 @@
 <VirtualHost *:80>
-  ServerName absoluteorange.com
-  ServerAlias www.absoluteorange.com
+  ServerName janosvarga.com
+  ServerAlias www.janosvarga.com
   ServerAdmin webmaster@localhost
-  DocumentRoot {{ document_root }}
+  DocumentRoot /vagrant/janosvarga
 
-  <Directory {{ document_root }}>
+  <Directory /vagrant/janosvarga
     Require all granted
     Options Indexes FollowSymLinks MultiViews
     AllowOverride All
   </Directory>
-
   ErrorLog ${APACHE_LOG_DIR}/error.log
   CustomLog ${APACHE_LOG_DIR}/access.log combined
 </VirtualHost>

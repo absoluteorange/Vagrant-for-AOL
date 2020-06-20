@@ -28,9 +28,21 @@
     state=present
   when: dbstatus.rc != 0
 
+
+- name: create database 'janosvarga'
+mysql_db: 
+  name=janosvarga 
+  state=present
+when: dbstatus.rc != 0
+
 - name: restore SQL file to database 'amyvarga'
   mysql_db: name=amyvarga state=import login_user=amyvarga login_password=0range target=/vagrant/www/database/prod/aol-prod.sql
   when: dbstatus.rc != 0
+
+- name: restore SQL file to database 'janosvarga'
+  mysql_db: name=janosvarga state=import login_user=amyvarga login_password=0range target=/vagrant/janosvarga/happys.sql
+  when: dbstatus.rc != 0
+
 
 - name: copy .my.cnf file with root password credentials
   template: 

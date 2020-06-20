@@ -1,0 +1,11 @@
+- name: Clone repo
+  git: repo=https://github.com/amyvarga/janosvarga dest=/vagrant/janosvarga update=no
+
+  - cron:
+    name: backup
+    weekday: 3
+    minute: 0
+    hour: 0
+    user: ubuntu
+    job: "cd /vagrant/janosvarga && sudo make backup"
+    cron_file: janosvarga-backup
